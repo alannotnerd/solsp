@@ -1,0 +1,72 @@
+{
+  "name": "solsp",
+  "description": "",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "Riphal <bjankovic998@gmail.com>",
+  "main": "./out/index.js",
+  "types": "./out/index.d.ts",
+  "bin": {
+    "solsp": "./out/index.js"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "scripts": {
+    "build": "tsc -b tsconfig.build.json",
+    "test": "cross-env TS_NODE_FILES=true mocha",
+    "test:coverage": "cross-env TS_NODE_FILES=true nyc mocha",
+    "lint": "yarn prettier --check && yarn eslint",
+    "lint:fix": "yarn prettier --write && yarn lint --fix",
+    "eslint": "eslint --max-warnings 0 \"./src/**/*.ts\" \"./test/**/*.ts\"",
+    "prettier": "prettier \"*.json\" \"src/**/*.{ts,js,md,json,yml}\" \"test/**/*.{ts,js,md,json,yml}\"",
+    "clean": "rimraf out .nyc_output coverage *.tsbuildinfo",
+    "test:codecov": "cross-env TS_NODE_FILES=true nyc --reporter=lcov mocha && codecov"
+  },
+  "devDependencies": {
+    "@istanbuljs/nyc-config-typescript": "1.0.2",
+    "@sentry/types": "6.19.1",
+    "@types/chai": "4.3.0",
+    "@types/fs-extra": "^9.0.13",
+    "@types/js-yaml": "^4.0.5",
+    "@types/mocha": "9.0.0",
+    "@types/module-alias": "^2.0.1",
+    "@types/node": "^14.14.37",
+    "@types/qs": "^6.9.7",
+    "@types/sinon": "10.0.6",
+    "@types/uuid": "^8.3.1",
+    "chai": "4.3.4",
+    "codecov": "3.8.3",
+    "cross-env": "7.0.3",
+    "eslint": "^7.23.0",
+    "mocha": "9.1.3",
+    "nyc": "15.1.0",
+    "rimraf": "3.0.2",
+    "sinon": "12.0.1",
+    "ts-node": "10.4.0",
+    "typescript": "4.5.4"
+  },
+  "dependencies": {
+    "@nomicfoundation/solidity-analyzer": "0.0.3",
+    "@sentry/node": "6.19.1",
+    "@sentry/tracing": "6.19.1",
+    "@solidity-parser/parser": "^0.14.0",
+    "@types/prettier": "2.4.3",
+    "c3-linearization": "0.3.0",
+    "fast-glob": "3.2.11",
+    "fs-extra": "^10.0.0",
+    "got": "^11.8.2",
+    "hardhat": "^2.6.0",
+    "js-yaml": "^4.1.0",
+    "module-alias": "^2.2.2",
+    "prettier": "2.5.1",
+    "prettier-plugin-solidity": "1.0.0-beta.24",
+    "qs": "^6.10.1",
+    "serialize-error": "8.1.0",
+    "uuid": "^8.3.2",
+    "vscode-languageserver": "^7.0.0",
+    "vscode-languageserver-protocol": "3.16.0",
+    "vscode-languageserver-textdocument": "^1.0.1",
+    "vscode-languageserver-types": "^3.16.0"
+  }
+}

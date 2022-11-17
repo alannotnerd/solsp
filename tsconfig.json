@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "es2020",
+    "lib": ["es2020"],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "outDir": "out",
+    "allowJs": true,
+    "sourceMap": true,
+    "strict": true,
+    "composite": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "paths": {
+      "@compilerDiagnostics/*": ["./src/compilerDiagnostics/*"],
+      "@analyzer/*": ["./src/parser/analyzer/*"],
+      "@common/*": ["./src/parser/common/*"],
+      "@services/*": ["./src/services/*"],
+      "@utils/*": ["./src/utils/*"]
+    }
+  }
+  // "include": ["src", "test"],
+  // "exclude": ["node_modules", ".vscode-test", ".eslintrc.js"]
+}
